@@ -31,7 +31,7 @@ def get_base64(file_path):
         return base64.b64encode(f.read()).decode()
 
 # -------- BACKGROUND IMAGE --------
-bg_image = get_base64(r"C:\Users\HP\Documents\Jupyter\Car Price Prediction\my car.jpg")
+bg_image = get_base64("my car.jpg")
 
 # -------- CUSTOM CSS / UI DESIGN --------
 st.markdown(f"""

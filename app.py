@@ -31,7 +31,14 @@ def get_base64(file_path):
         return base64.b64encode(f.read()).decode()
 
 # -------- BACKGROUND IMAGE --------
-bg_image = get_base64("my_car.jpg")
+import os
+
+image_path = "my_car.jpg"
+
+if os.path.exists(image_path):
+    bg_image = get_base64(image_path)
+else:
+    bg_image = ""
 
 # -------- CUSTOM CSS / UI DESIGN --------
 st.markdown(f"""

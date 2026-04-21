@@ -97,10 +97,8 @@ li[role="option"] {{
     color: white !important;
 }}
 
-.stButton > button {{
-    display: block;
-    margin: auto;
-    width: 260px;
+.stButton > button 
+    width: 100%;
     height: 70px;
     border-radius: 18px;
     border: 2px solid rgba(255,255,255,0.35);
@@ -112,6 +110,7 @@ li[role="option"] {{
     white-space: nowrap;
     box-shadow: 0 8px 24px rgba(0,0,0,0.35);
     transition: all 0.3s ease;
+
 }}
 
 .stButton > button:hover {{
@@ -231,10 +230,10 @@ fuel_type = st.selectbox("⛽ Fuel Type", fuel_types)
 st.markdown("<br><br><br><br>", unsafe_allow_html=True)
 
 # -------- CENTER BUTTON --------
-left, center, right = st.columns([1, 2, 1])
+col1, col2, col3 = st.columns([3,1,3])
 
-with center:
-    predict_btn = st.button("🔍 Predict Price")
+with col2:
+    predict_btn = st.button("🔍 Predict Price", use_container_width=True)
 
 # -------- PREDICTION --------
 if predict_btn:
